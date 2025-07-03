@@ -3,7 +3,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 def train(x,y):
-    model=RandomForestClassifier(class_weight='balanced', max_iter=1000)
+    model=RandomForestClassifier(class_weight='balanced', random_state=42,n_estimators=300,max_depth=15,min_samples_split=0.1,min_samples_leaf=0.1)
     model.fit(x,y)
     return model
 def evaluate(model,x,y):
